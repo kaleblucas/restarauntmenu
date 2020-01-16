@@ -5,7 +5,7 @@ public class MenuItem {
     private String description;
     private String category;
     private double price = 0.0;
-    private Date dateUpdated;
+    private Date dateCreated;
 
 
     public MenuItem(String name, String description, double price, String category){
@@ -13,8 +13,20 @@ public class MenuItem {
         this.description = description;
         this.price = price;
         this.category = category;
-        this.dateUpdated = new Date();
+        this.dateCreated = new Date();
     }
+
+    @Override
+    public String toString() {
+        return  "******\n"+
+                name +
+                "\nDescription: " + description +
+                "\nCategory: " + category +
+                "\nPrice: " + price +
+                "\nCreated: " + dateCreated +
+                "\n******\n\n";
+    }
+
 
     public String getName() {
         return name;
@@ -46,5 +58,9 @@ public class MenuItem {
 
     private void setCategory(String category) {
         this.category = category;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
     }
 }
